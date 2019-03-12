@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const routes = require('./routes/index');
 const session = require('express-session');
+const errorsHandler = require('./middlewares/errors');
 
 const app = express();
 
@@ -25,5 +26,8 @@ app.use(session({
 app.use(flash());
 
 app.use('/', routes);
+
+app.use(errorsHandler.notFound);
+app.use(errorsHandler.catchErrors);
 
 module.exports = app;
