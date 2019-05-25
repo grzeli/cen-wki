@@ -3,5 +3,5 @@ exports.home = (req, res) => {
 };
 
 exports.device1 = (req, res) => {
-  res.send('cenowki  OSKORY');
+  res.send('cenowki  informacja do wyświetlenia');
 };
